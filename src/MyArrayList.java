@@ -35,9 +35,20 @@ public class MyArrayList<T> implements MyList{
 
     @Override
     public Object remove(int index) {
-        return null;
+        Object arr3 = arr[index];
+        for (int i = index; i < size - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        arr[size - 1] = "";
+        size--;
+        return arr3;
     }
 
+    private void resize(int newSize){
+        Object[] arr3 = new Object[newSize];
+        System.arraycopy(arr, 0, arr3, 0, size);
+        arr = arr3;
+    }
     @Override
     public void clear() {
 
@@ -69,4 +80,5 @@ public class MyArrayList<T> implements MyList{
         }
         arr = arr2;
     }
+
 }

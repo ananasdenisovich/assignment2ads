@@ -7,6 +7,14 @@ public class Main {
         arr.add(4);
         arr.add(5);
         arr.add(6);
-        System.out.println(arr.get(5));
+        arr.remove(3);
+
+        System.out.print(arr.get(0));
+        System.out.print(arr.get(1));
+        System.out.print(arr.get(2));
+        System.out.print(arr.get(3));
+        System.out.print(arr.get(4));
+        System.out.print(arr.get(5));
+
     }
 }
