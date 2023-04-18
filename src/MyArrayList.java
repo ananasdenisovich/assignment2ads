@@ -8,7 +8,13 @@ public class MyArrayList<T> implements MyList{
 
     @Override
     public int size() {
-        return 0;
+        int count = 0;
+        for (int i = 0; i < size; i++){
+            if (arr[i] != ""){
+                count++;
+            }
+        }
+        return count;
     }
 
     @Override
