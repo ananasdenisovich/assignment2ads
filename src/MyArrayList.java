@@ -1,18 +1,65 @@
-public class MyArrayList<T> {
+public class MyArrayList<T> implements MyList{
     private Object[] arr;
     private int size = 0;
     private int capacity = 5;
     public MyArrayList(){
         arr = new Object[capacity];
     }
-    public T get(int index){
-        return (T) arr[index];
+
+    @Override
+    public int size() {
+        return 0;
     }
-    public void add(T newItem){
+
+    @Override
+    public boolean contains(Object o) {
+        return false;
+    }
+
+    @Override
+    public void add(Object item) {
         if (size == capacity){
             increaseCapacity();
         }
-        arr[size++] = newItem;
+        arr[size++] = item;
+    }
+
+    @Override
+    public void add(Object item, int index) {
+    }
+
+    @Override
+    public boolean remove(Object item) {
+        return false;
+    }
+
+    @Override
+    public Object remove(int index) {
+        return null;
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
+    public T get(int index){
+        return (T) arr[index];
+    }
+
+    @Override
+    public int indexOf(Object o) {
+        return 0;
+    }
+
+    @Override
+    public int lastIndexOf(Object o) {
+        return 0;
+    }
+
+    @Override
+    public void sort() {
+
     }
     private void increaseCapacity(){
         capacity = 2 * capacity;
