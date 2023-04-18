@@ -15,7 +15,7 @@ public class MyArrayList<T> {
         arr[size++] = newItem;
     }
     private void increaseCapacity(){
-        capacity = (int) (1.5 * capacity);
+        capacity = 2 * capacity;
         Object[] arr2 = new Object[capacity];
         for (int i = 0; i < capacity; i++){
             arr2[i] = arr[i];
