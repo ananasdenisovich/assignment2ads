@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         MyArrayList<Integer> arr = new MyArrayList<Integer>();
@@ -7,7 +9,7 @@ public class Main {
         arr.add(4);
         arr.add(5);
         arr.add(6);
-
+        arr.remove(3);
         System.out.print(arr.get(0));
         System.out.print(arr.get(1));
         System.out.print(arr.get(2));
@@ -15,5 +17,7 @@ public class Main {
         System.out.print(arr.get(4));
         System.out.println(arr.get(5));
         System.out.println(arr.size());
+        System.out.println(arr.contains(4));
+        System.out.println(arr.indexOf(6));
     }
 }

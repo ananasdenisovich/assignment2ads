@@ -3,22 +3,30 @@ public class MyArrayList<T> implements MyList{
     private int size = 0;
     private int capacity = 5;
     public MyArrayList(){
-        arr = new Object[capacity];
+        this.arr = new Object[capacity];
+        this.size = 0;
     }
 
     @Override
     public int size() {
-        int count = 0;
-        for (int i = 0; i < size; i++){
-            if (arr[i] != ""){
-                count++;
-            }
-        }
-        return count;
+        return size;
     }
 
     @Override
     public boolean contains(Object o) {
+        if (o == null) {
+            for (int i = 0; i < size; i++) {
+                if (arr[i] == null) {
+                    return false;
+                }
+            }
+        } else {
+            for (int i = 0; i < size; i++) {
+                if (o.equals(arr[i])) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
@@ -36,7 +44,16 @@ public class MyArrayList<T> implements MyList{
 
     @Override
     public boolean remove(Object item) {
-        return false;
+        boolean x = false;
+        for (int i = 0; i < size; i++) {
+            if (item == arr[i]){
+                remove(i);
+                x = true;
+            } else {
+                x = false;
+            }
+        }
+        return x;
     }
 
     @Override
@@ -50,14 +67,11 @@ public class MyArrayList<T> implements MyList{
         return arr3;
     }
 
-    private void resize(int newSize){
-        Object[] arr3 = new Object[newSize];
-        System.arraycopy(arr, 0, arr3, 0, size);
-        arr = arr3;
-    }
+
     @Override
     public void clear() {
-
+        this.arr = new Object[5];
+        this.size = 0;
     }
 
     public T get(int index){
@@ -66,12 +80,24 @@ public class MyArrayList<T> implements MyList{
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        int x = 0;
+        for (int i = 0; i < size; i++) {
+            if (o == arr[i]){
+                x = i;
+            }
+        }
+        return x;
     }
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        int x = 0;
+        for (int i = size-1; i >= 0; i--) {
+            if (o == arr[i]){
+                x = i;
+            }
+        }
+        return x;
     }
 
     @Override
