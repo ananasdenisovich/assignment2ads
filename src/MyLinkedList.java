@@ -1,11 +1,15 @@
-public class MyLinkedList<T> implements MyList<T> {
+import java.util.Comparator;
+
+public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
 
     private class Node<E> {
+        public T value;
         E element;
         Node<E> next;
         Node<E> prev;
 
         Node(E element, Node<E> next, Node<E> prev) {
+            this.value = value;
             this.element = element;
             this.next = next;
             this.prev = prev;
@@ -141,4 +145,25 @@ public class MyLinkedList<T> implements MyList<T> {
         }
         return index;
     }
+    public void sort(Comparator<T> comparator) {
+        if (size <= 1) {
+            return; // list is already sorted
+        }
+
+        Node current = head;
+        while (current != null) {
+            Node innerCurrent = current;
+            T value = (T) innerCurrent.value;
+            while (innerCurrent.prev != null && comparator.compare(value, (T) innerCurrent.prev.value) < 0) {
+                innerCurrent.value = innerCurrent.prev.value;
+                innerCurrent = innerCurrent.prev;
+            }
+            innerCurrent.value = value;
+            current = current.next;
+        }
+
+    }
+
+
+
 }
