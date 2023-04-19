@@ -8,11 +8,6 @@ public class MyArrayList<T> implements MyList {
         this.size = 0;
         this.quantity = quantity;
     }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
     @Override
     public int size() {
         return size;

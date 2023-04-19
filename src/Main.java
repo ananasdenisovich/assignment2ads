@@ -2,22 +2,12 @@
 
 public class Main {
     public static void main(String[] args) {
-        MyArrayList<Integer> arr = new MyArrayList<Integer>();
-        arr.add(1);
-        arr.add(2);
-        arr.add(8);
-        arr.add(4);
-        arr.add(5);
-        arr.add(6);
-
-        System.out.print(arr.get(0));
-        System.out.print(arr.get(1));
-        System.out.print(arr.get(2));
-        System.out.print(arr.get(3));
-        System.out.print(arr.get(4));
-        System.out.println(arr.get(5));
-        System.out.println(arr.size());
-        System.out.println(arr.contains(4));
-        System.out.println(arr.indexOf(6));
+        MyList<String> list = new MyLinkedList<>();
+        list.add("a");
+        list.add("b");
+        list.add("b");
+        System.out.println(list.indexOf("a"));
+        System.out.println( list.lastIndexOf("b"));
     }
+
 }
