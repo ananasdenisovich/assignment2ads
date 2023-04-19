@@ -94,6 +94,14 @@ public class Main {
         System.out.println("Enter String to check contains: ");
         String containsCheck = scan.next();
         System.out.println(arr2.contains(containsCheck));
+        System.out.println("What element would you like to add?");
+        String toAdd = scan.next();
+        arr2.add(toAdd);
+        displayArray(arr2);
+        System.out.println("what element would you like to add and on what index?");
+        toAdd = scan.next();
+        int index = scan.nextInt();
+        arr2.add(toAdd, index);
         }
 
     public static void displayArray(MyArrayList arr){
