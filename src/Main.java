@@ -1,8 +1,12 @@
 import javax.sound.midi.Soundbank;
 import java.util.Comparator;
+import java.util.Scanner;
+
+import static java.lang.System.exit;
 
 public class Main {
     public static void main(String[] args) {
+        // CHECK WITHOUT INPUT
         System.out.println("Hello! Lets check my assignment2");
         System.out.println("First, we should check MyArraylist class");
         MyArrayList<Integer> arr1 = new MyArrayList<>();
@@ -12,9 +16,7 @@ public class Main {
         arr1.add(3);
         arr1.add(4);
         arr1.add(5);
-        for (int i = 0; i < arr1.size(); i++) {
-            System.out.print(arr1.get(i) + " ");
-        }
+        displayArray(arr1);
         System.out.println();
         System.out.println("method 'get' displayed needed elements by index");
         System.out.print("method 'size' shows size of array: ");
@@ -72,7 +74,25 @@ public class Main {
         System.out.println("lets now clear it!");
         list.clear();
         displayList(list);
-    }
+
+        // CHECK WITH INPUT
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Do you want to check this all with your input?");
+        String answer = scan.next();
+            System.out.println("Then First MyArrayList for Strings!");
+            System.out.println("How many elements do you want in your array?");
+            int n = scan.nextInt();
+            MyArrayList<String> arr2 = new MyArrayList<>();
+            System.out.println("now enter their values:");
+            for (int i = 0; i < n; i++){
+                String element = scan.next();
+                arr2.add(element);
+            }
+            System.out.println("here is your array: " );
+            displayArray(arr2);
+            System.out.println("size is " + arr2.size());
+        }
+
     public static void displayArray(MyArrayList arr){
         for (int i = 0; i < arr.size(); i++) {
             System.out.print(arr.get(i) + " ");
