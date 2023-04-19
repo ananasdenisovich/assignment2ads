@@ -40,11 +40,21 @@ public class MyArrayList<T> implements MyList {
 
     @Override
     public void add(Object item, int index) {
-
+        if (index < 0 || index > this.size) {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
+        if (this.size == this.arr.length) {
+            this.increaseCapacity();
+        }
+        for (int i = this.size; i > index; i--) {
+            this.arr[i] = this.arr[i-1];
+        }
+        this.arr[index] = item;
+        this.size++;
     }
 
     @Override
-    public boolean remove(Object item) {
+    public boolean removeByObject(Object item) {
         boolean x = false;
         for (int i = 0; i < size; i++) {
             if (item == arr[i]){
@@ -81,7 +91,7 @@ public class MyArrayList<T> implements MyList {
     @Override
     public int indexOf(Object o) {
         int x = 0;
-        for (int i = 0; i < size; i++) {
+        for (int i = size-1; i >= 0; i--) {
             if (o == arr[i]){
                 x = i;
             }
@@ -92,7 +102,7 @@ public class MyArrayList<T> implements MyList {
     @Override
     public int lastIndexOf(Object o) {
         int x = 0;
-        for (int i = size-1; i >= 0; i--) {
+        for (int i = 0; i < size; i++) {
             if (o == arr[i]){
                 x = i;
             }

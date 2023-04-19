@@ -3,7 +3,7 @@ public interface MyList<T> {
     boolean contains(Object o);
     void add(T item);
     void add(T item, int index);
-    boolean remove(T item);
+    boolean removeByObject(T item);
     T remove(int index);
     void clear();
     T get(int index);

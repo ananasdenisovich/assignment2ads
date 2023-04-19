@@ -60,7 +60,7 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
         }
     }
 
-    public boolean remove(T item) {
+    public boolean removeByObject(T item) {
         Node<T> current = head;
         while (current != null) {
             if (current.element.equals(item)) {
