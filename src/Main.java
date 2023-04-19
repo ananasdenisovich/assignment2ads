@@ -48,35 +48,30 @@ public class Main {
         list.add("b");
         list.add("c");
         System.out.println("'get' displays elements:");
-        for (int i = 0; i < list.size(); i++) {
-            System.out.print(list.get(i) + " ");
-        }
-        System.out.println();
+        displayList(list);
         System.out.println("'size' method: " + list.size());
         System.out.println("'contains' method for a and k");
         System.out.println(list.contains("a"));
         System.out.println(list.contains("k"));
         System.out.println("Lets add something!");
         list.add("hi");
-        for (int i = 0; i < list.size(); i++) {
-            System.out.print(list.get(i) + " ");
-        }
-        System.out.println();
+        displayList(list);
         System.out.println("now lets add by index");
         list.add("yooo", 2);
-        for (int i = 0; i < list.size(); i++) {
-            System.out.print(list.get(i) + " ");
-        }
-        System.out.println();
+        displayList(list);
         System.out.println("lets remove by item");
         list.removeByObject("hi");
-        for (int i = 0; i < list.size(); i++) {
-            System.out.print(list.get(i) + " ");
-        }
+        displayList(list);
     }
     public static void displayArray(MyArrayList arr){
         for (int i = 0; i < arr.size(); i++) {
             System.out.print(arr.get(i) + " ");
+        }
+        System.out.println();
+    }
+    public static void displayList(MyLinkedList list){
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + " ");
         }
         System.out.println();
     }
