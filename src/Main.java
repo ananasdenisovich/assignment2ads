@@ -27,32 +27,20 @@ public class Main {
         System.out.println(arr1.contains(8));
         System.out.println("Lets add an element by index:");
         arr1.add(6, 3);
-        for (int i = 0; i < arr1.size(); i++) {
-            System.out.print(arr1.get(i) + " ");
-        }
-        System.out.println();
+        displayArray(arr1);
         System.out.println("Now lets check 'remove' by index");
         arr1.remove(6);
-        for (int i = 0; i < arr1.size(); i++) {
-            System.out.print(arr1.get(i) + " ");
-        }
-        System.out.println();
+        displayArray(arr1);
         System.out.println("Check 'remove' by item:");
         arr1.removeByObject(6);
-        for (int i = 0; i < arr1.size(); i++) {
-            System.out.print(arr1.get(i) + " ");
-        }
-        System.out.println();
+        displayArray(arr1);
         arr1.add(1);
         System.out.println("check last and first index of 1 2 3 4 5 1:");
         System.out.println("first index: " + arr1.indexOf(1));
         System.out.println("last index: " + arr1.lastIndexOf(1));
         System.out.println("Last, lets check 'clear':");
         arr1.clear();
-        for (int i = 0; i < arr1.size(); i++) {
-            System.out.print(arr1.get(i) + " ");
-        }
-        System.out.println();
+        displayArray(arr1);
         System.out.println();
         System.out.println("Now lets check LinkedList!");
         MyLinkedList<String> list = new MyLinkedList<>();
@@ -78,6 +66,17 @@ public class Main {
         list.add("yooo", 2);
         for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i) + " ");
+        }
+        System.out.println();
+        System.out.println("lets remove by item");
+        list.removeByObject("hi");
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + " ");
+        }
+    }
+    public static void displayArray(MyArrayList arr){
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.print(arr.get(i) + " ");
         }
         System.out.println();
     }
