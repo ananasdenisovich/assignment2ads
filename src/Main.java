@@ -102,6 +102,14 @@ public class Main {
         toAdd = scan.next();
         int index = scan.nextInt();
         arr2.add(toAdd, index);
+        System.out.println("What element would you like to remove?");
+        String toRemove = scan.next();
+        arr2.add(toRemove);
+        displayArray(arr2);
+        System.out.println("what element would you like to remove and on what index?");
+        toRemove = scan.next();
+        index = scan.nextInt();
+        arr2.add(toRemove, index);
         }
 
     public static void displayArray(MyArrayList arr){
