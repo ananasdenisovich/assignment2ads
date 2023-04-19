@@ -22,7 +22,7 @@ public class Main {
         System.out.println("lets add 1 more element");
         arr1.add(6);
         System.out.println("size is now changed: " + arr1.size());
-        System.out.println("Now lets check 'contain' method:");
+        System.out.println("Now lets check 'contains' method for 2 and 8:");
         System.out.println(arr1.contains(2));
         System.out.println(arr1.contains(8));
         System.out.println("Lets add an element by index:");
@@ -56,6 +56,30 @@ public class Main {
         System.out.println();
         System.out.println("Now lets check LinkedList!");
         MyLinkedList<String> list = new MyLinkedList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        System.out.println("'get' displays elements:");
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + " ");
+        }
+        System.out.println();
+        System.out.println("'size' method: " + list.size());
+        System.out.println("'contains' method for a and k");
+        System.out.println(list.contains("a"));
+        System.out.println(list.contains("k"));
+        System.out.println("Lets add something!");
+        list.add("hi");
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + " ");
+        }
+        System.out.println();
+        System.out.println("now lets add by index");
+        list.add("yooo", 2);
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + " ");
+        }
+        System.out.println();
     }
 
 }
