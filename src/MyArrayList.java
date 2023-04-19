@@ -1,10 +1,16 @@
-public class MyArrayList<T> implements MyList{
+public class MyArrayList<T> implements MyList {
     private Object[] arr;
     private int size = 0;
     private int capacity = 5;
+    private int quantity;
     public MyArrayList(){
         this.arr = new Object[capacity];
         this.size = 0;
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 
     @Override
@@ -29,7 +35,6 @@ public class MyArrayList<T> implements MyList{
         }
         return false;
     }
-
     @Override
     public void add(Object item) {
         if (size == capacity){
@@ -40,6 +45,7 @@ public class MyArrayList<T> implements MyList{
 
     @Override
     public void add(Object item, int index) {
+
     }
 
     @Override
@@ -55,7 +61,6 @@ public class MyArrayList<T> implements MyList{
         }
         return x;
     }
-
     @Override
     public Object remove(int index) {
         Object arr3 = arr[index];
@@ -74,8 +79,8 @@ public class MyArrayList<T> implements MyList{
         this.size = 0;
     }
 
-    public T get(int index){
-        return (T) arr[index];
+    public Object get(int index){
+        return (Object) arr[index];
     }
 
     @Override
@@ -99,10 +104,10 @@ public class MyArrayList<T> implements MyList{
         }
         return x;
     }
-
-    @Override
-    public void sort() {
-
+    public void checkIndex(int index){
+        if(index < 0 || index>=size){
+            throw new IndexOutOfBoundsException();
+        }
     }
     private void increaseCapacity(){
         capacity = 2 * capacity;
