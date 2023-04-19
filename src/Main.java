@@ -1,8 +1,4 @@
-import javax.sound.midi.Soundbank;
-import java.util.Comparator;
 import java.util.Scanner;
-
-import static java.lang.System.exit;
 
 public class Main {
     public static void main(String[] args) {
@@ -109,7 +105,6 @@ public class Main {
         displayArray(arr2);
         System.out.println("what element would you like to remove?");
         String toRemove = scan.next();
-        index = scan.nextInt();
         arr2.removeByObject(toRemove);
         displayArray(arr2);
         System.out.println("which element's index would you like to know?");
@@ -120,17 +115,17 @@ public class Main {
         System.out.println(arr2.lastIndexOf(item));
         System.out.println();
 
-        System.out.println("Now lets check LinkeList!");
+        System.out.println("Now lets check LinkedList!");
         System.out.println("How many elements do you want in your linkedList?");
         n = scan.nextInt();
-        MyArrayList<String> list2 = new MyArrayList<>();
+        MyLinkedList<String> list2 = new MyLinkedList<>();
         System.out.println("now enter their values:");
         for (int i = 0; i < n; i++){
             String element = scan.next();
             list2.add(element);
         }
         System.out.println("here is your list: " );
-        displayArray(list2);
+        displayList(list2);
         System.out.println("size is " + list2.size());
         System.out.println("Enter String to check contains: ");
         containsCheck = scan.next();
@@ -138,19 +133,19 @@ public class Main {
         System.out.println("What element would you like to add?");
         toAdd = scan.next();
         list2.add(toAdd);
-        displayArray(list2);
+        displayList(list2);
         System.out.println("what element would you like to add and on what index?");
         toAdd = scan.next();
         index = scan.nextInt();
         list2.add(toAdd, index);
+        displayList(list2);
         System.out.println("What element would you like to remove?");
-        toRemove = scan.next();
-        list2.add(toRemove);
-        displayArray(list2);
+        index = scan.nextInt();
+        list2.remove(index);
+        displayList(list2);
         System.out.println("what element would you like to remove and on what index?");
         toRemove = scan.next();
-        index = scan.nextInt();
-        list2.add(toRemove, index);
+        list2.removeByObject(toRemove);
         System.out.println("which element's index would you like to know?");
         item = scan.next();
         System.out.println(list2.indexOf(item));
@@ -166,7 +161,7 @@ public class Main {
         }
         System.out.println();
     }
-    public static void displayList(MyLinkedList list){
+    public static void displayList(MyLinkedList<String> list){
         for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i) + " ");
         }
