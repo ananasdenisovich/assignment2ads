@@ -116,6 +116,46 @@ public class Main {
         System.out.println("which element's last index would you like to know?");
         item = scan.next();
         System.out.println(arr2.lastIndexOf(item));
+        System.out.println();
+
+        System.out.println("Now lets check LinkeList!");
+        System.out.println("How many elements do you want in your linkedList?");
+        n = scan.nextInt();
+        MyArrayList<String> list2 = new MyArrayList<>();
+        System.out.println("now enter their values:");
+        for (int i = 0; i < n; i++){
+            String element = scan.next();
+            list2.add(element);
+        }
+        System.out.println("here is your list: " );
+        displayArray(list2);
+        System.out.println("size is " + list2.size());
+        System.out.println("Enter String to check contains: ");
+        containsCheck = scan.next();
+        System.out.println(list2.contains(containsCheck));
+        System.out.println("What element would you like to add?");
+        toAdd = scan.next();
+        list2.add(toAdd);
+        displayArray(list2);
+        System.out.println("what element would you like to add and on what index?");
+        toAdd = scan.next();
+        index = scan.nextInt();
+        list2.add(toAdd, index);
+        System.out.println("What element would you like to remove?");
+        toRemove = scan.next();
+        list2.add(toRemove);
+        displayArray(list2);
+        System.out.println("what element would you like to remove and on what index?");
+        toRemove = scan.next();
+        index = scan.nextInt();
+        list2.add(toRemove, index);
+        System.out.println("which element's index would you like to know?");
+        item = scan.next();
+        System.out.println(list2.indexOf(item));
+        System.out.println("which element's last index would you like to know?");
+        item = scan.next();
+        System.out.println(list2.lastIndexOf(item));
+        System.out.println();
         }
 
     public static void displayArray(MyArrayList arr){
