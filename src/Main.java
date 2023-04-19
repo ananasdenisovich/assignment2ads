@@ -66,7 +66,10 @@ public class Main {
         list.remove(2);
         displayList(list);
         list.add("a");
-        System.out.println("now l");
+        System.out.println("now lets check indexOf and lastIndexOf of 'a' for a b c a");
+        System.out.println("first index: " + list.indexOf("a"));
+        System.out.println("last index: " + list.lastIndexOf("a"));
+
     }
     public static void displayArray(MyArrayList arr){
         for (int i = 0; i < arr.size(); i++) {
