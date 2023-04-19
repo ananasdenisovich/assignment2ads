@@ -15,6 +15,7 @@ public class MyArrayList<T> implements MyList {
 
     @Override
     public boolean contains(Object o) {
+
         if (o == null) {
             for (int i = 0; i < size; i++) {
                 if (arr[i] == null) {
@@ -40,6 +41,7 @@ public class MyArrayList<T> implements MyList {
 
     @Override
     public void add(Object item, int index) {
+        checkIndex(index);
         if (index < 0 || index > this.size) {
             throw new IndexOutOfBoundsException("Invalid index: " + index);
         }
@@ -68,6 +70,7 @@ public class MyArrayList<T> implements MyList {
     }
     @Override
     public Object remove(int index) {
+        checkIndex(index);
         Object arr3 = arr[index];
         for (int i = index; i < size - 1; i++) {
             arr[i] = arr[i + 1];
@@ -85,6 +88,7 @@ public class MyArrayList<T> implements MyList {
     }
 
     public Object get(int index){
+        checkIndex(index);
         return (Object) arr[index];
     }
 
@@ -122,5 +126,6 @@ public class MyArrayList<T> implements MyList {
         }
         arr = arr2;
     }
+
 
 }

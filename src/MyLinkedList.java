@@ -9,7 +9,6 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
         Node<E> prev;
 
         Node(E element, Node<E> next, Node<E> prev) {
-            this.value = value;
             this.element = element;
             this.next = next;
             this.prev = prev;
@@ -46,6 +45,7 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
     }
 
     public void add(T item, int index) {
+        checkIndex(index);
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
         }
@@ -73,6 +73,7 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
     }
 
     public T remove(int index) {
+        checkIndex(index);
         Node<T> current = getNode(index);
         unlink(current);
         return current.element;
@@ -103,6 +104,7 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
     }
 
     private Node<T> getNode(int index) {
+        checkIndex(index);
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
@@ -163,7 +165,9 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
         }
 
     }
-
-
-
+    public void checkIndex(int index){
+        if(index < 0 || index>=size){
+            throw new IndexOutOfBoundsException();
+        }
+    }
 }
