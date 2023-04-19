@@ -62,6 +62,11 @@ public class Main {
         System.out.println("lets remove by item");
         list.removeByObject("hi");
         displayList(list);
+        System.out.println("now remove by index");
+        list.remove(2);
+        displayList(list);
+        list.add("a");
+        System.out.println("now l");
     }
     public static void displayArray(MyArrayList arr){
         for (int i = 0; i < arr.size(); i++) {
