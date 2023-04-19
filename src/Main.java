@@ -91,6 +91,9 @@ public class Main {
             System.out.println("here is your array: " );
             displayArray(arr2);
             System.out.println("size is " + arr2.size());
+        System.out.println("Enter String to check contains: ");
+        String containsCheck = scan.next();
+        System.out.println(arr2.contains(containsCheck));
         }
 
     public static void displayArray(MyArrayList arr){
