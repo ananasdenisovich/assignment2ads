@@ -110,6 +110,12 @@ public class Main {
         toRemove = scan.next();
         index = scan.nextInt();
         arr2.add(toRemove, index);
+        System.out.println("which element's index would you like to know?");
+        String item = scan.next();
+        System.out.println(arr2.indexOf(item));
+        System.out.println("which element's last index would you like to know?");
+        item = scan.next();
+        System.out.println(arr2.lastIndexOf(item));
         }
 
     public static void displayArray(MyArrayList arr){
