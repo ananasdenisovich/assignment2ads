@@ -5,10 +5,25 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
         Node<E> next; //next node
         Node<E> prev; //previous node
 
+
         Node(E element, Node<E> next, Node<E> prev) { //new class node with respective attributes
             this.element = element;
             this.next = next;
             this.prev = prev;
+        }
+        public E getElement() {
+            return element;
+        }
+
+        public void setElement(E element) {
+            this.element = element;
+        }
+
+        public Node<E> getNext() {
+            return next;
+        }
+        public void setNext(Node<E> next) {
+            this.next = next;
         }
     }
 
@@ -21,7 +36,9 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
         tail = null;
         size = 0;
     }
+    public void addByElement(){
 
+    }
     public int size() {
         return size; //returns current count of elements
     }
@@ -40,7 +57,23 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
         tail = newNode;
         size++;//increases size as there is 1 new element
     }
+    public void addAll(MyLinkedList list, int index, MyLinkedList list2){
+        Node current = list.getNode(index);
+        MyLinkedList tempList = new MyLinkedList();
+        for (int i = index; i < list.size; i++){
+            tempList.add(list.get(i));
+            list.removeByObject(list.get(i));
+            size--;
+        }
+        for (int i = 0; i < list2.size; i++){
+            list.add(list2.get(i));
+            size++;
+        }
+        for (int i = 0; i < tempList.size; i++){
+            list.add(tempList.get(i));
+        }
 
+    }
     public void add(T item, int index) {
         checkIndex(index);
         if (index == size) {
@@ -140,4 +173,18 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
             throw new IndexOutOfBoundsException();
         }
     }
-}
+    public void sort() {
+
+        Node<T> current = head;
+
+        for(int i = 0; i < size;i++){
+            if(current.getNext()!=null && current.getElement().compareTo(current.getNext().getElement()) < 0){
+                T temp = current.getElement();
+                current.setElement(current.getNext().getElement());
+                current.getNext().setElement(temp);
+            }
+            current = current.getNext();
+        }
+        current = head;
+    }
+    }

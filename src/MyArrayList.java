@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class MyArrayList<T> implements MyList {
     private Object[] arr;
     private int size = 0; //count of elements
@@ -37,6 +39,8 @@ public class MyArrayList<T> implements MyList {
         arr[size++] = item; // assigns an item to index from 0 to last element by increasing size
     }
 
+
+
     @Override
     public void add(Object item, int index) {
         checkIndex(index); //checks for right index
@@ -50,6 +54,9 @@ public class MyArrayList<T> implements MyList {
         this.size++; //increases size by 1
     }
 
+    public void addALl(MyArrayList arr, int index, int n) {
+
+    }
     @Override
     public boolean removeByObject(Object item) {
         boolean x = false;
@@ -122,5 +129,32 @@ public class MyArrayList<T> implements MyList {
         arr = arr2;
     }
 
+    public void addElementsByIndex(MyArrayList list, int index, int n) {
+        Scanner scan = new Scanner(System.in);
+        for (int i = 0; i < n; i++) {
+            T item = (T) scan.next();
+            list.add(item, index + i);
+        }
+    }
+    public void addAll(MyArrayList arr1, MyArrayList arr2, int index, int n){
+        for (int i = 0; i < n; i++){
+            arr1.add(arr2.get(i), index + i);
+            size++;
+        }
+    }
+    public void addManyElements(MyArrayList<T> arrayList, int index, int n) {
+        Scanner scan = new Scanner(System.in);
+        checkIndex(index); //checks for right index
+        if (this.size == this.arr.length) {
+            this.increaseCapacity(); //increases capability, if size ids equal or bigger
+        }
+        for (int i = index; i < this.size; i++) {
+            this.arr[i] = this.arr[i-1]; //gives value of a previous element, if new one isnt added on last position
+        }
+        for (int i = 0; i < n; i++){
+            T item = (T) scan.next();
+            arrayList.add(item, index);
+        }
+    }
 
 }
