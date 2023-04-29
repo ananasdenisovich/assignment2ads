@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MyArrayList<T> implements MyList {
     private Object[] arr;
-    private int size = 0; //count of elements
+    protected static int size = 0; //count of elements
     private int capacity = 5; //size's max (may change)
     public MyArrayList(){
         this.arr = new Object[capacity];
@@ -11,7 +11,7 @@ public class MyArrayList<T> implements MyList {
     @Override
     public int size() {
         return size;
-    } //returns size of arraylist according on how many elements we added
+    } //returns size of arraylist according to how many elements we added
 
     @Override
     public boolean contains(Object o) {
