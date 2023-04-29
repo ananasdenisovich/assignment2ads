@@ -9,5 +9,11 @@ public class MyArrayListStack extends MyArrayList {
     public void push(Object item){
         add(item, 0);
     }
+    public Object pop(){
+        Object temp = arrayStack.get(0);
+        remove(0);
+        return temp;
+    }
+
 
 }

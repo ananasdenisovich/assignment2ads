@@ -7,8 +7,7 @@ public class Main {
         stack.add(2);
         stack.add(3);
         stack.push(4);
-        
-        System.out.println(stack.size);
+        stack.pop();
         displayArray(stack);
     }
 
