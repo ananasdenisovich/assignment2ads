@@ -1,19 +1,23 @@
 import java.util.EmptyStackException;
-public class MyArrayListStack extends MyArrayList {
-    MyArrayList arrayStack;
-    int capacity = 5;
-    int size = 0;
-    public MyArrayListStack(){
-        arrayStack = new MyArrayList<>();
+public class MyArrayListStack<T> extends MyArrayList {
+    private MyArrayList<T> arrayList;
+
+    public MyArrayListStack() {
+        arrayList = new MyArrayList<>();
     }
     public void push(Object item){
         add(item, 0);
     }
     public Object pop(){
-        Object temp = arrayStack.get(0);
-        remove(0);
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        Object temp = arrayList.get(arrayList.size - 1);
+        remove(arrayList.size - 1);
         return temp;
     }
-
+    public boolean isEmpty() {
+        return arrayList.isEmpty();
+    }
 
 }

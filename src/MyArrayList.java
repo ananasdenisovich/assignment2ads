@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MyArrayList<T> implements MyList {
     private Object[] arr;
-    protected static int size = 0; //count of elements
+    int size = 0; //count of elements
     private int capacity = 5; //size's max (may change)
     public MyArrayList(){
         this.arr = new Object[capacity];
@@ -127,6 +127,13 @@ public class MyArrayList<T> implements MyList {
             arr2[i] = arr[i]; //creates a new array with new capacity and copys values from prev one
         }
         arr = arr2;
+    }
+    public boolean isEmpty(){
+        if (size == 0){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void addElementsByIndex(MyArrayList list, int index, int n) {
