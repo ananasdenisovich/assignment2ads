@@ -6,10 +6,10 @@ public class Main {
         stack.add(1);
         stack.add(2);
         stack.add(3);
-        System.out.println(stack.size());
         displayArray(stack);
         System.out.println(stack.peek(stack));
-        System.out.println(stack.isEmpty());
+        System.out.println(stack.isEmpty(stack));
+        System.out.println(stack.size(stack));
     }
 
     public static void displayArray(MyArrayList arr){

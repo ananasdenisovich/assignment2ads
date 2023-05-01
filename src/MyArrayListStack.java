@@ -20,5 +20,7 @@ public class MyArrayListStack extends MyArrayList {
             return false;
         }
     }
-
+    public int size(MyArrayListStack arrayStack){
+        return arrayStack.size;
+    }
 }
