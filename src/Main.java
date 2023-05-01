@@ -10,7 +10,7 @@ public class Main {
         queue.dequeue(queue);
         displayList(queue);
         System.out.println(queue.peek());
-
+        System.out.println(queue.isEmpty(queue));
     }
 
     public static void displayArray(MyArrayList arr){
