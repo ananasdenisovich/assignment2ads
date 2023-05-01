@@ -7,10 +7,9 @@ public class Main {
         stack.add(2);
         stack.add(3);
         System.out.println(stack.size());
-        stack.pop(stack);
         displayArray(stack);
         System.out.println(stack.peek(stack));
-
+        System.out.println(stack.isEmpty());
     }
 
     public static void displayArray(MyArrayList arr){
