@@ -13,7 +13,7 @@ public class MyLinkedListQueue extends MyLinkedList{
         }
         return linkedQueue.remove(0);
     }
-    public Object peek(){
+    public Object peek(MyLinkedListQueue linkedQueue){
         return getFirst();
     }
     public boolean isEmpty(MyLinkedListQueue linkedQueue){
