@@ -91,7 +91,9 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
         head = newNode;
         size++;
     }
-
+    public T getFirst(T item){
+        return head.element;
+    }
 
 
     public boolean removeByObject(T item) {

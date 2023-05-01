@@ -10,4 +10,7 @@ public class MyLinkedListQueue extends MyLinkedList{
     public Object dequeue(MyLinkedListQueue linkedQueue){
         return linkedQueue.remove(0);
     }
+    public Object peek(MyLinkedListQueue linkedQueue){
+        return getFirst((Comparable) linkedQueue);
+    }
 }
