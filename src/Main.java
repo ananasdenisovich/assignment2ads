@@ -9,7 +9,7 @@ public class Main {
         queue.add(5);
         queue.dequeue(queue);
         displayArray(queue);
-        //System.out.println(queue.peek());
+        System.out.println(queue.peek(queue));
         //System.out.println(queue.isEmpty(queue));
         //System.out.println(queue.size(queue));
     }
