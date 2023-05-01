@@ -57,9 +57,9 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
         tail = newNode;
         size++;//increases size as there is 1 new element
     }
-    public void addAll(MyLinkedList list, int index, MyLinkedList list2){
+    public void addAll(MyLinkedList<T> list, int index, MyLinkedList<T> list2){
         Node current = list.getNode(index);
-        MyLinkedList tempList = new MyLinkedList();
+        MyLinkedList<T> tempList = new MyLinkedList<>();
         for (int i = index; i < list.size; i++){
             tempList.add(list.get(i));
             list.removeByObject(list.get(i));
@@ -86,6 +86,13 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
             size++;
         }
     }
+    public void addFirst(T element) {
+        Node<T> newNode = new Node<>(element, head, tail);
+        head = newNode;
+        size++;
+    }
+
+
 
     public boolean removeByObject(T item) {
         Node<T> current = head;

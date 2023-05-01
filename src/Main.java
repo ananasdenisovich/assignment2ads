@@ -1,14 +1,13 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        MyArrayListStack stack = new MyArrayListStack();
+        MyLinkedListStack stack = new MyLinkedListStack();
         stack.add(1);
         stack.add(2);
         stack.add(3);
-        displayArray(stack);
-        System.out.println(stack.peek(stack));
-        System.out.println(stack.isEmpty(stack));
-        System.out.println(stack.size(stack));
+        System.out.println(stack.size());
+        stack.push(5, stack);
+        displayList(stack);
     }
 
     public static void displayArray(MyArrayList arr){
