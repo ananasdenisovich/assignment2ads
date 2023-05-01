@@ -10,7 +10,7 @@ public class Main {
         queue.dequeue(queue);
         displayArray(queue);
         System.out.println(queue.peek(queue));
-        //System.out.println(queue.isEmpty(queue));
+        System.out.println(queue.isEmpty(queue));
         //System.out.println(queue.size(queue));
     }
 

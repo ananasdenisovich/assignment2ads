@@ -15,4 +15,11 @@ public class MyArrayListQueue extends MyArrayList{
     public Object peek(MyArrayListQueue arrayQueue){
         return arrayQueue.get(0);
     }
+    public boolean isEmpty(MyArrayListQueue arrayQueue){
+        if (arrayQueue.size == 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
