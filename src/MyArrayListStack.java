@@ -8,9 +8,15 @@ public class MyArrayListStack extends MyArrayList {
         add(item, 0);
     }
     public Object pop(MyArrayListStack arrayStack){
+        if (arrayStack.isEmpty()) {
+            throw new EmptyStackException();
+        }
         return arrayStack.remove(arrayStack.size() - 1);
     }
     public Object peek(MyArrayListStack arrayStack){
+        if (arrayStack.isEmpty()) {
+            throw new EmptyStackException();
+        }
         return arrayStack.get(arrayStack.size()-1);
     }
     public boolean isEmpty(MyArrayListStack arrayStack){
@@ -21,6 +27,9 @@ public class MyArrayListStack extends MyArrayList {
         }
     }
     public int size(MyArrayListStack arrayStack){
+        if (arrayStack.isEmpty()) {
+            throw new EmptyStackException();
+        }
         return arrayStack.size;
     }
 }
