@@ -1,3 +1,5 @@
+import java.util.EmptyStackException;
+
 public class MyLinkedListStack<T> extends MyLinkedList{
     private MyLinkedList linkedStack;
     public MyLinkedListStack(){
@@ -18,5 +20,11 @@ public class MyLinkedListStack<T> extends MyLinkedList{
         } else {
             return false;
         }
+    }
+    public int size(MyLinkedListStack linkedStack){
+        if (linkedStack.isEmpty(linkedStack)) {
+            throw new EmptyStackException();
+        }
+        return linkedStack.size;
     }
 }
