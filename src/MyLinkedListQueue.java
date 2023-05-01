@@ -7,4 +7,7 @@ public class MyLinkedListQueue extends MyLinkedList{
     public void enqueue(Object item){
         add((Comparable) item);
     }
+    public Object dequeue(MyLinkedListQueue linkedQueue){
+        return linkedQueue.remove(linkedQueue.size() - 1);
+    }
 }

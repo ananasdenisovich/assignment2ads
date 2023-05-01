@@ -6,6 +6,8 @@ public class Main {
         queue.add(2);
         queue.add(3);
         queue.enqueue(5);
+        queue.add(5);
+        queue.dequeue(queue);
         displayList(queue);
     }
 
