@@ -10,9 +10,15 @@ public class MyArrayListQueue extends MyArrayList{
         add((Comparable) item);
     }
     public Object dequeue(MyArrayListQueue arrayQueue){
+        if (arrayQueue.isEmpty(arrayQueue)) {
+            throw new NoSuchElementException();
+        }
         return arrayQueue.remove(0);
     }
     public Object peek(MyArrayListQueue arrayQueue){
+        if (arrayQueue.isEmpty(arrayQueue)) {
+            throw new NoSuchElementException();
+        }
         return arrayQueue.get(0);
     }
     public boolean isEmpty(MyArrayListQueue arrayQueue){
