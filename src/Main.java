@@ -6,10 +6,8 @@ public class Main {
         stack.add(1);
         stack.add(2);
         stack.add(3);
-        stack.push(4);
-        displayArray(stack);
-        stack.pop();
-        displayArray(stack);
+        
+        System.out.println(stack.size());
 
     }
 
