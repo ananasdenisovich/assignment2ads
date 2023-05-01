@@ -11,7 +11,7 @@ public class Main {
         displayArray(queue);
         System.out.println(queue.peek(queue));
         System.out.println(queue.isEmpty(queue));
-        //System.out.println(queue.size(queue));
+        System.out.println(queue.size(queue));
     }
 
     public static void displayArray(MyArrayList arr){

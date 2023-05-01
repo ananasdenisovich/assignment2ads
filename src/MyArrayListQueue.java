@@ -22,4 +22,10 @@ public class MyArrayListQueue extends MyArrayList{
             return false;
         }
     }
+    public int size(MyArrayListQueue arrayQueue){
+        if (arrayQueue.isEmpty(arrayQueue)) {
+            throw new NoSuchElementException();
+        }
+        return arrayQueue.size;
+    }
 }
