@@ -8,6 +8,6 @@ public class MyLinkedListQueue extends MyLinkedList{
         add((Comparable) item);
     }
     public Object dequeue(MyLinkedListQueue linkedQueue){
-        return linkedQueue.remove(linkedQueue.size() - 1);
+        return linkedQueue.remove(0);
     }
 }
