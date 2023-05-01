@@ -1,5 +1,4 @@
 import java.util.EmptyStackException;
-import java.util.NoSuchElementException;
 public class MyLinkedListQueue extends MyLinkedList{
     private MyLinkedList linkedQueue;
     public MyLinkedListQueue(){
