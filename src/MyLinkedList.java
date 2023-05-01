@@ -1,5 +1,7 @@
 public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
 
+
+
     private class Node<E> {
         E element; //element of linkedlist
         Node<E> next; //next node

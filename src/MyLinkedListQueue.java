@@ -1,4 +1,4 @@
-import java.util.EmptyStackException;
+import java.util.NoSuchElementException;
 public class MyLinkedListQueue extends MyLinkedList{
     private MyLinkedList linkedQueue;
     public MyLinkedListQueue(){
@@ -8,6 +8,9 @@ public class MyLinkedListQueue extends MyLinkedList{
         add((Comparable) item);
     }
     public Object dequeue(MyLinkedListQueue linkedQueue){
+        if (linkedQueue.isEmpty(linkedQueue)) {
+            throw new NoSuchElementException();
+        }
         return linkedQueue.remove(0);
     }
     public Object peek(){
@@ -22,7 +25,7 @@ public class MyLinkedListQueue extends MyLinkedList{
     }
     public int size(MyLinkedListQueue linkedQueue){
         if (linkedQueue.isEmpty(linkedQueue)) {
-            throw new EmptyStackException();
+            throw new NoSuchElementException();
         }
         return linkedQueue.size;
     }

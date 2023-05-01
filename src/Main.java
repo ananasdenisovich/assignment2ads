@@ -1,17 +1,17 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        MyLinkedListQueue queue = new MyLinkedListQueue();
+        MyArrayListQueue queue = new MyArrayListQueue();
         queue.add(1);
         queue.add(2);
         queue.add(3);
         queue.enqueue(5);
         queue.add(5);
-        queue.dequeue(queue);
-        displayList(queue);
-        System.out.println(queue.peek());
-        System.out.println(queue.isEmpty(queue));
-        System.out.println(queue.size(queue));
+        //queue.dequeue(queue);
+        displayArray(queue);
+        //System.out.println(queue.peek());
+        //System.out.println(queue.isEmpty(queue));
+        //System.out.println(queue.size(queue));
     }
 
     public static void displayArray(MyArrayList arr){
