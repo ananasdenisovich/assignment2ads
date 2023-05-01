@@ -12,5 +12,11 @@ public class MyLinkedListStack<T> extends MyLinkedList{
     public Comparable peek(MyLinkedListStack linkedStack){
         return linkedStack.get(linkedStack.size()-1);
     }
-
+    public boolean isEmpty(MyLinkedListStack linkedStack){
+        if (linkedStack.size == 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

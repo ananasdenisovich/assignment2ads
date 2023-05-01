@@ -5,11 +5,11 @@ public class Main {
         stack.add(1);
         stack.add(2);
         stack.add(3);
-        System.out.println(stack.size());
         stack.push(5);
         stack.pop(stack);
         displayList(stack);
         System.out.println(stack.peek(stack));
+        System.out.println(stack.size());
     }
 
     public static void displayArray(MyArrayList arr){

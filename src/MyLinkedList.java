@@ -29,7 +29,7 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
 
     private Node<T> head; //first element
     private Node<T> tail; //last element
-    private int size; //count of elements
+    int size; //count of elements
 
     public MyLinkedList() {
         head = null;
