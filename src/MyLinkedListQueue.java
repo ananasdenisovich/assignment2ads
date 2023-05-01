@@ -1,3 +1,4 @@
+import java.util.EmptyStackException;
 import java.util.NoSuchElementException;
 public class MyLinkedListQueue extends MyLinkedList{
     private MyLinkedList linkedQueue;
@@ -19,6 +20,12 @@ public class MyLinkedListQueue extends MyLinkedList{
         } else {
             return false;
         }
+    }
+    public int size(MyLinkedListQueue linkedQueue){
+        if (linkedQueue.isEmpty(linkedQueue)) {
+            throw new EmptyStackException();
+        }
+        return linkedQueue.size;
     }
 
 }
