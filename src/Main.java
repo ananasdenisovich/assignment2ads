@@ -9,7 +9,8 @@ public class Main {
         queue.add(5);
         queue.dequeue(queue);
         displayList(queue);
-        System.out.println(queue.peek(queue));
+        System.out.println(queue.peek());
+
     }
 
     public static void displayArray(MyArrayList arr){

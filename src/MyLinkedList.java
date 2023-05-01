@@ -91,7 +91,7 @@ public class MyLinkedList<T extends Comparable<T>> implements MyList<T>{
         head = newNode;
         size++;
     }
-    public T getFirst(T item){
+    public T getFirst(){
         return head.element;
     }
 
